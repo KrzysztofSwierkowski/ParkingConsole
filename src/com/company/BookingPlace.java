@@ -39,14 +39,14 @@ public class BookingPlace {
         return !Objects.equals(emptyPlace, "0");
     }
 
-    public void booking() {
+    public void booking(String user) {
         time();
 
         if (reserved.equals("")) {
             if (status()) {
                 this.reserved = emptyPlace;
                 parkingPlace.replace(emptyPlace, nextDay);
-                System.out.println("Zarezerwowano miejsce parkingowe nr.: " + emptyPlace + " Na dzień : " + parkingPlace.getParkingMap().get(emptyPlace));
+                System.out.println("Zarezerwowano miejsce parkingowe nr.: " + emptyPlace + " Na dzień : " + parkingPlace.getParkingMap().get(emptyPlace) + " dla " + user);
             } else {
                 System.out.println("Przepraszamy, wszystkie miejsca zostały zarezerwowane");
             }
